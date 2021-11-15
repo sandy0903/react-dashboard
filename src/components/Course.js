@@ -18,7 +18,7 @@ const Course = ({countdown}) => {
                     </div>
                     <div className="line"></div>
                     <div className="exam-list">
-                        <div className="row flex">
+                        <div className="row flex fl-wrap">
                             <div className="exam-item ">
                                 <div className={"item-link active-time"}>                                
                                     <FontAwesomeIcon icon={faClipboardList}/>
@@ -46,8 +46,8 @@ const Course = ({countdown}) => {
                             <CourseItem countdown={countdown} isCountDown={true}/>
                             <CourseItem countdown={countdown} isCountDown={false}/>
                             
-                        </div>
-                        <div className="row flex">
+                       
+                        
                             <div className="exam-item">
                                 <div className="item-link active-time">
                                     <FontAwesomeIcon icon={faCalendarCheck}/>
@@ -75,6 +75,7 @@ const Course = ({countdown}) => {
                             </div>
                             <CourseItem countdown={countdown} isCountDown={false}/>
                             <CourseItem countdown={countdown} isCountDown={false}/>
+                        
                         </div>
                     </div>
                     <h2>Kết quả thi</h2>

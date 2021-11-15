@@ -1,10 +1,11 @@
-import React from 'react';
+import React , {useState}from 'react';
 import "./Header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShoppingCart, faBell, faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import logo from "../img/logo.png";
 import userImg from "../img/user.png";
 const Header = () => {
+    const [overlay, showOverlay]=useState(false);
     return (
       <nav className="navbar" >
           <div className="nav-container flex">
@@ -33,20 +34,28 @@ const Header = () => {
                       </ul>
                   </div>
                   <div className="nav-item-user ">
-                      <ul className="flex ai-center jc-center">
-                          <li className="user-cart flex jc-center ai-center">
-                          <FontAwesomeIcon icon={faShoppingCart} className="user-icon" /><span>2</span>
-                          </li>
-                          <li className="user-info flex ai-center">
-                              <img src={userImg} alt="user-img" className="user-img"/><span>lanlai1212</span>
-                          </li>
-                          <li className="user-noti flex jc-center ai-center">
-                              <FontAwesomeIcon icon={faBell} className="user-icon" />
-                          </li>
-                          <li className="user-narrow flex jc-center ai-center">
-                              <FontAwesomeIcon icon={faChevronDown} className="user-icon" />
-                          </li>
-                      </ul>
+                      <div className={overlay ? "overlay overlay-box" :"overlay"}>
+                            <ul className="flex ai-center jc-center">
+                                <li className="user-cart flex jc-center ai-center">
+                                <FontAwesomeIcon icon={faShoppingCart} className="user-icon" /><span>2</span>
+                                </li>
+                                <li className="user-info flex ai-center">
+                                    <img src={userImg} alt="user-img" className="user-img"/><span>lanlai1212</span>
+                                </li>
+                                <li className="user-noti flex jc-center ai-center">
+                                    <FontAwesomeIcon icon={faBell} className="user-icon" />
+                                </li>
+                                <li className="user-narrow flex jc-center ai-center">
+                                    <FontAwesomeIcon icon={faChevronDown} className="user-icon" />
+                                </li>
+                            </ul>
+                      </div>
+                      <div className={overlay ? "hamburger-menu toggle":"hamburger-menu"} onClick={()=>{showOverlay(!overlay)}}>
+                        <span ></span>
+                        <span ></span>
+                        <span ></span>
+
+                    </div>
                   </div>
               </div>
           </div>
