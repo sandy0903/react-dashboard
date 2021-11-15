@@ -3,7 +3,7 @@ import "./Page2.css";
 import Header from "./Header2";
 import MainContent from "./MainContent2";
 import {useState, useEffect} from "react";
-
+import "../Breakpoint2.css";
 const Page2 = ({countdown}) => {
     const [boxQuestion, showBoxQuestion]=useState(false)
     function addBoxQuestion(){
